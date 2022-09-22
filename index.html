@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <style>
+    .wrap { width: 94%; height: 90vh; margin: 0 auto; }
+    .flex { display: flex; justify-content: space-between; margin-bottom: 10px; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr 1fr; grid-template-rows: 1fr 1fr 1fr;
+      justify-content: center; align-items: center; text-align: center; border: 1px solid black;
+      width: 100%; font-size: 60px; position: relative; gap:1px; font-weight: 800;
+      }
+    .grid div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 200px;
+      border: 1px solid black;
+    }
+    .button {
+     background-color: #4CAF50; /* Green */
+      border: none;
+      color: white;
+      padding: 4px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      background-color: #4CAF50;
+    }
+  </style>
+    <div class="wrap">
+      <div class="flex">
+        <h3>무작위 숫자 찾기</h3>
+        <button class="button" onclick="myFunction()">재배치</button>
+      </div>
+      <div class="grid">
+        <div id="number_0"></div>
+        <div id="number_1"></div>
+        <div id="number_2"></div>
+        <div id="number_3"></div>
+        <div id="number_4"></div>
+        <div id="number_5"></div>
+        <div id="number_6"></div>
+        <div id="number_7"></div>
+        <div id="number_8"></div>
+        <div id="number_9"></div>
+        <div id="number_10"></div>
+        <div id="number_11"></div>
+      </div>
+  </div>
+  
+  <script>
+    const arr = [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, '&nbsp;'];
+
+    arr.sort(function (a, b) { return 0.5 - Math.random() });
+    for (let i = 0; i < arr.length; i++) {
+        console.log(arr[i])
+        document.getElementById('number_' + i).innerHTML = arr[i];
+    }
+
+    function myFunction() {
+      arr.sort(function (a, b) { return 0.5 - Math.random() });
+      for (let i = 0; i < arr.length; i++){
+        console.log(arr[i])
+        document.getElementById('number_'+i).innerHTML = arr[i];
+      }
+    }
+
+  </script>
+
+
+</body>
+</html>
